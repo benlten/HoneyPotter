@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HoneyPotter · Synthetic Distractor Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav">
+      <a class="brand" href="#top">HoneyPotter</a>
+      <div class="nav-links">
+        <a href="#overview">Overview</a>
+        <a href="#install">Install</a>
+        <a href="#examples">Examples</a>
+        <a href="#moire">Moirés</a>
+        <a href="#patterns">Patterns Only</a>
+        <a href="#resources">Resources</a>
+      </div>
+    </nav>
+    <div class="hero-content" id="top">
+      <h1>HoneyPotter</h1>
+      <p class="tagline">Synthetic distractor factory for stress-testing vision models. Generate non-semantic patterns, textures, and ViT-friendly moirés in both in-distribution and neon OOD colour modes.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://github.com/benlten/HoneyPotter">GitHub</a>
+        <a class="btn" href="https://pypi.org/project/honeypotter/">PyPI</a>
+        <a class="btn" href="https://github.com/benlten/HoneyPotter#honeypotter">Docs</a>
+      </div>
+      <div class="pip">
+        <code>pip install honeypotter</code>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview" class="section">
+      <h2>Why HoneyPotter?</h2>
+      <p>Honeypots are adversarial non-semantic categories that look nothing like the labelled objects in your dataset. Drop them into validation splits, measure steal-rate, and benchmark calibration without collecting new data.</p>
+      <div class="features">
+        <div class="card">
+          <h3>Pattern Families</h3>
+          <p>Checkerboards, stripes, dots, blobs, solids, primitives, Perlin textures, and a dedicated <strong>moire</strong> family.</p>
+        </div>
+        <div class="card">
+          <h3>Colour Control</h3>
+          <p>Toggle grayscale, high-contrast BW, neon OOD palettes, or gamut-aware RGB sampling from your data.</p>
+        </div>
+        <div class="card">
+          <h3>Dataset Ready</h3>
+          <p>Category names encode parameters and blur settings. Export <code>labelmap.json</code>, <code>labels.txt</code>, and <code>metadata.csv</code> for immediate integration.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="install" class="section alt">
+      <h2>Install</h2>
+      <div class="install-grid">
+        <div>
+          <h3>Stable release</h3>
+          <pre><code>pip install honeypotter</code></pre>
+        </div>
+        <div>
+          <h3>From source</h3>
+          <pre><code>git clone https://github.com/benlten/HoneyPotter.git
+cd HoneyPotter
+pip install -e .[dev]</code></pre>
+        </div>
+      </div>
+      <p>The CLI is exposed as <code>honeypotter</code> once installed (see below for quick commands).</p>
+    </section>
+
+    <section id="examples" class="section">
+      <h2>CLI Examples</h2>
+      <div class="code-grid">
+        <div>
+          <h3>OOD Sweep</h3>
+          <pre><code>honeypotter generate \
+  --out ./honeypots \
+  --n_categories 50 --per_class 100 \
+  --families checker,stripes,dots,blob,solid \
+  --color_mode ood --seed 0</code></pre>
+        </div>
+        <div>
+          <h3>Gamut-Constrained</h3>
+          <pre><code>honeypotter generate \
+  --out ./in_dist \
+  --gamut ./imagenet_gamut.json \
+  --families checker,stripes,perlin \
+  --pattern_blur_sigma 2.0</code></pre>
+        </div>
+        <div>
+          <h3>Programmatic</h3>
+          <pre><code>from honeypotter import GenerateDistractor, CategorySpec
+spec = CategorySpec.default(families=["moire"], n_categories=10)
+img, name = GenerateDistractor(spec=spec, seed=7)()</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="moire" class="section alt">
+      <h2>ViT-Friendly Moirés</h2>
+      <p>HoneyPotter’s moiré family generates interference bands from dual-frequency sine waves. Intensities can be snapped to an <code>N×N</code> grid (default <code>16×16</code>) so each vision transformer patch sees a coherent signal.</p>
+      <div class="moire-layout">
+        <div class="moire-text">
+          <ul>
+            <li>Randomise or enumerate hues with <code>--moire_hues</code></li>
+            <li>Control interference with <code>--moire_frequency*</code> and <code>--moire_angle*</code></li>
+            <li>Adjust contrast via <code>--moire_saturation/value</code> ranges</li>
+          </ul>
+        </div>
+        <div class="moire-gallery">
+          <img src="assets/palette_0.png" alt="Palette sample">
+          <img src="assets/ood_0.png" alt="OOD sample">
+          <img src="assets/palette_1.png" alt="Palette sample">
+          <img src="assets/ood_1.png" alt="OOD sample">
+          <img src="assets/palette_2.png" alt="Palette sample">
+          <img src="assets/ood_2.png" alt="OOD sample">
+        </div>
+      </div>
+    </section>
+
+    <section id="patterns" class="section">
+      <h2>Texture Banks Without Labels</h2>
+      <p>Need synthetic backgrounds or augmentation tiles? Add <code>--patterns_only</code> to skip class directories, label maps, and metadata. Files are emitted as <code>pattern_000123.png</code> so you can drop them straight into your pipeline.</p>
+      <pre><code>honeypotter generate --out ./texture_bank \
+  --families moire,stripes --patterns_only \
+  --n_categories 24 --per_class 4</code></pre>
+    </section>
+
+    <section id="resources" class="section alt">
+      <h2>Resources</h2>
+      <div class="resource-grid">
+        <a class="resource" href="https://github.com/benlten/HoneyPotter">📦 GitHub Repository</a>
+        <a class="resource" href="https://pypi.org/project/honeypotter/">⚙️ PyPI Package</a>
+        <a class="resource" href="https://github.com/benlten/HoneyPotter#evaluation-guidance">🧪 Evaluation Guidance</a>
+        <a class="resource" href="https://github.com/benlten/HoneyPotter/tree/main/examples">📄 Examples & Scripts</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>MIT License · Honeypotter contributors · 2025</p>
+  </footer>
+</body>
+</html>
