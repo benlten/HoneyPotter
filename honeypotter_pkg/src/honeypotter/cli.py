@@ -90,6 +90,15 @@ def cmd_generate(args):
     except (OSError, PermissionError) as e:
         raise RuntimeError(f"Cannot create output directory '{args.out}': {e}")
 
+    if args.patterns_only:
+        counter = 0
+        for cfg in tqdm(gen.categories, desc="Patterns"):
+            for _ in range(args.per_class):
+                img = gen.generate_category(cfg)
+                img.save(out_root / f"pattern_{counter:06d}.png")
+                counter += 1
+        return
+
     labelmap = {cfg["name"]: idx for idx, cfg in enumerate(gen.categories)}
     with open(out_root / "labelmap.json", "w") as f:
         json.dump(labelmap, f, indent=2)
@@ -103,7 +112,7 @@ def cmd_generate(args):
     for cfg in tqdm(gen.categories, desc="Categories"):
         name = cfg["name"]; cid = labelmap[name]
         for j in range(args.per_class):
-            img, _ = gen()
+            img = gen.generate_category(cfg)
             rel = pathlib.Path(name) / f"{name}_{j:06d}.png"
             img.save(out_root / rel)
             rows.append({
@@ -128,6 +137,7 @@ def build_parser():
     g.add_argument("--enable_primitives", action="store_true", help="Adds 'circle' family (off by default)")
     g.add_argument("--include_texture_family", action="store_true", help="Adds 'texture' family (requires --texture_dir)")
     g.add_argument("--enable_moire", action="store_true", help="Adds 'moire' interference pattern family")
+    g.add_argument("--patterns_only", action="store_true", help="Generate patterns without label directories or metadata")
     g.add_argument("--texture_dir", type=str, default=None)
     g.add_argument("--texture_mix_prob", type=float, default=0.0)
 

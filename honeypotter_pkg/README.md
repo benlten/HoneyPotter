@@ -6,6 +6,7 @@
 
 ## Features
 - **Pattern families**: `checker`, `stripes`, `dots`, `blob`, `solid`, optional `circle`, `perlin`, `texture`, and `moire`
+- **Patterns-only export**: Dump raw pattern tiles with `--patterns_only` when class labels/metadata are not needed
 - **Color modes**:
   - `color` - Random RGB or sophisticated gamut-based sampling
   - `gray` - Grayscale variations
@@ -68,6 +69,12 @@ honeypotter generate --out ./moire_vit \
   --enable_moire --families moire \
   --moire_grid_size 16 \
   --no-moire-random-hue --moire_hues 15,195,305
+
+# Pattern tiles without labels
+honeypotter generate --out ./patterns_only \
+  --n_categories 10 --per_class 5 \
+  --families moire,stripes \
+  --patterns_only
 ```
 
 Output creates organized directories like: `checker_sz8_ood/`, `stripes_45deg_w4_blurS3/`, etc.
@@ -322,6 +329,7 @@ Moiré patterns are now available as a first-class family. Enable them with `--e
 - **Hue control**: Random hues are used by default. Opt into deterministic palettes with `--no-moire-random-hue` and provide a comma-separated list via `--moire_hues 15,195,305`. If omitted, Honeypotter falls back to an internal neon-inspired list.
 - **Frequency controls**: Tune interference strength with `--moire_frequency_min/max` and `--moire_frequency_delta_min/max`. Small deltas intensify the moiré banding.
 - **Contrast**: Use `--moire_saturation_*` and `--moire_value_*` to adjust colorfulness and brightness of the bands.
+- **Patterns-only mode**: Add `--patterns_only` to export flat image dumps (no labelmap/metadata) when you just need texture banks or synthetic backgrounds.
 
 Programmatic usage mirrors the CLI:
 

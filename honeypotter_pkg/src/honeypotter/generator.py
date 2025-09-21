@@ -316,8 +316,7 @@ class GenerateDistractor:
         except Exception:
             return self._solid_color(self.spec.color_mode)
 
-    def __call__(self):
-        cfg = self.rng.choice(self.categories)
+    def generate_category(self, cfg: Dict) -> Image.Image:
         fam = cfg["family"]
         mode = cfg.get("color_mode", self.spec.color_mode)
         if fam == "solid":
@@ -357,6 +356,11 @@ class GenerateDistractor:
             img = img.filter(ImageFilter.GaussianBlur(radius=float(cfg["blur_sigma"])))
         if self.global_blur_sigma and self.global_blur_sigma > 0:
             img = img.filter(ImageFilter.GaussianBlur(radius=float(self.global_blur_sigma)))
+        return img
+
+    def __call__(self):
+        cfg = self.rng.choice(self.categories)
+        img = self.generate_category(cfg)
         return img, cfg["name"]
 
     def _apply_grid(self, arr: np.ndarray, grid_size: Optional[int]) -> np.ndarray:
