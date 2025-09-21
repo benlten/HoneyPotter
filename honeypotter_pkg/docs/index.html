@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honeypotter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Honeypotter</h1>
+  <p>Generate non-semantic <strong>in-dist</strong> and <strong>OOD</strong> distractor classes to stress-test image classifiers.</p>
+  <div class="cta">
+    <a class="btn" href="https://github.com/yourname/honeypotter">GitHub</a>
+    <a class="btn" href="../honeypotter_v0.5.0.zip">Download v0.5.0</a>
+  </div>
+</header>
+
+<section>
+  <h2>Why Honeypots?</h2>
+  <p>Honeypot classes (e.g., stripes, checkers, blobs) have <em>no semantic meaning</em>—they exist only to hijack classifier confidence. To evaluate properly, <strong>append honeypot class names to your dataset’s label space</strong> and measure steal-rate.</p>
+</section>
+
+<section>
+  <h2>In-Distribution vs OOD Colors</h2>
+  <p>Render each family with <code>palette</code> (ImageNet/THINGS priors) or <code>ood</code> (neon/unrealistic). Below: left are palette samples, right are OOD samples.</p>
+  <div class="grid">
+    <img src="assets/palette_0.png"/>
+    <img src="assets/ood_0.png"/>
+    <img src="assets/palette_1.png"/>
+    <img src="assets/ood_1.png"/>
+    <img src="assets/palette_2.png"/>
+    <img src="assets/ood_2.png"/>
+  </div>
+</section>
+
+<section>
+  <h2>CLI</h2>
+  <pre><code>honeypotter generate \
+  --out ./honeypots \
+  --n_categories 100 --per_class 100 \
+  --families checker,stripes,dots,blob,solid \
+  --color_mode ood --ood_palette ./ood_colors.json \
+  --pattern_blur_sigma 3.0 --global_blur_sigma 0.0 \
+  --seed 0</code></pre>
+</section>
+
+<footer>
+  <p>© 2025 Honeypotter authors</p>
+</footer>
+</body>
+</html>
