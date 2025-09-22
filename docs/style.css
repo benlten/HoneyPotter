@@ -146,6 +146,24 @@ body {
   margin-top: 32px;
 }
 
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  align-items: start;
+}
+
+.overview-text ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.overview-snippet pre {
+  background: #111827;
+  color: #e5e7eb;
+}
+
 .card {
   padding: 24px;
   border-radius: 20px;

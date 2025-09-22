@@ -40,7 +40,7 @@
   <main>
     <section id="overview" class="section">
       <h2>Why HoneyPotter?</h2>
-      <p>Honeypots are adversarial non-semantic categories that look nothing like the labelled objects in your dataset. Drop them into validation splits, measure steal-rate, and benchmark calibration without collecting new data.</p>
+      <p>Honeypots are adversarial non-semantic categories built to hijack classifier confidence. Use them to stress-test calibration, measure steal-rate, and surface architectural biases—no new data collection required.</p>
       <div class="features">
         <div class="card">
           <h3>Pattern Families</h3>
@@ -53,6 +53,24 @@
         <div class="card">
           <h3>Dataset Ready</h3>
           <p>Category names encode parameters and blur settings. Export <code>labelmap.json</code>, <code>labels.txt</code>, and <code>metadata.csv</code> for immediate integration.</p>
+        </div>
+      </div>
+      <div class="overview-grid">
+        <div class="overview-text">
+          <h3>What problems does this solve?</h3>
+          <ul>
+            <li>Quantify <strong>steal-rate</strong>: how often do models map honeypots onto real classes?</li>
+            <li>Audit <strong>confidence calibration</strong> on non-semantic distractors.</li>
+            <li>Expose <strong>architectural biases</strong> (e.g., ViT patch aliasing vs. CNN texture priors).</li>
+            <li>Bootstrap <strong>robustness benchmarks</strong> on top of existing datasets.</li>
+          </ul>
+        </div>
+        <div class="overview-snippet">
+          <h3>Sample class list</h3>
+          <pre><code>01: checker_sz16_ood
+02: stripes_45deg_w8_grid16
+03: moire_grid16_h15
+04: dots_r6_s24_color</code></pre>
         </div>
       </div>
     </section>

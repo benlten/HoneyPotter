@@ -1,0 +1,6 @@
+{
+  "checker_sz16_ood": 0,
+  "stripes_45deg_w8_grid16": 1,
+  "moire_f12_df3_a45_grid16_h15": 2,
+  "dots_r6_s24_color": 3
+}

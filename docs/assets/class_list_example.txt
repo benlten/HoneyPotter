@@ -1,0 +1,6 @@
+Class List Snippet
+------------------
+00: checker_sz16_ood
+01: stripes_45deg_w8_grid16
+02: moire_grid16_h15
+03: dots_r6_s24_color
