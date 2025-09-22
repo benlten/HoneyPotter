@@ -310,3 +310,10 @@ footer {
   color: var(--muted);
 }
 
+
+@media (max-width: 768px) {
+  .moire-panel {
+    width: 100%;
+  }
+}
+
