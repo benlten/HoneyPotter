@@ -132,14 +132,28 @@ img, name = gen()</code></pre>
             <li>Control interference with <code>--moire_frequency*</code> and <code>--moire_angle*</code></li>
             <li>Adjust contrast via <code>--moire_saturation/value</code> ranges</li>
           </ul>
+          <p class="moire-note">Outputs are named after their parameters so you can trace frequency, angle, grid size, and hue in downstream analysis.</p>
         </div>
         <div class="moire-gallery">
-          <img src="assets/palette_0.png" alt="Palette sample">
-          <img src="assets/ood_0.png" alt="OOD sample">
-          <img src="assets/palette_1.png" alt="Palette sample">
-          <img src="assets/ood_1.png" alt="OOD sample">
-          <img src="assets/palette_2.png" alt="Palette sample">
-          <img src="assets/ood_2.png" alt="OOD sample">
+          <img class="moire-panel" src="assets/moire_panel.png" alt="Palette vs OOD moiré grid">
+          <div class="moire-samples">
+            <figure>
+              <img src="assets/moire_focus_00.png" alt="Grid 16 hue 20 angle 8 moiré">
+              <figcaption>Grid 16 · hue 20° · θ 8°</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/moire_focus_01.png" alt="Grid 16 hue 150 angle 45 moiré">
+              <figcaption>Grid 16 · hue 150° · θ 45°</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/moire_focus_02.png" alt="Grid 8 hue 280 angle 90 moiré">
+              <figcaption>Grid 8 · hue 280° · θ 90°</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/moire_focus_03.png" alt="Freeform hue 45 angle 135 moiré">
+              <figcaption>Freeform · hue 45° · θ 135°</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -155,10 +169,10 @@ img, name = gen()</code></pre>
     <section id="resources" class="section alt">
       <h2>Resources</h2>
       <div class="resource-grid">
-        <a class="resource" href="https://github.com/benlten/HoneyPotter">📦 GitHub Repository</a>
-        <a class="resource" href="https://pypi.org/project/honeypotter/">⚙️ PyPI Package</a>
-        <a class="resource" href="https://github.com/benlten/HoneyPotter#evaluation-guidance">🧪 Evaluation Guidance</a>
-        <a class="resource" href="https://github.com/benlten/HoneyPotter/tree/main/examples">📄 Examples & Scripts</a>
+        <a class="resource" href="https://github.com/benlten/HoneyPotter">GitHub Repository</a>
+        <a class="resource" href="https://pypi.org/project/honeypotter/">PyPI Package</a>
+        <a class="resource" href="https://github.com/benlten/HoneyPotter#evaluation-guidance">Evaluation Guidance</a>
+        <a class="resource" href="https://github.com/benlten/HoneyPotter/tree/main/examples">Examples & Scripts</a>
       </div>
     </section>
   </main>

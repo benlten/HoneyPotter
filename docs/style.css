@@ -213,9 +213,9 @@ code {
 }
 
 .moire-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .moire-gallery img {
@@ -279,3 +279,34 @@ footer {
     padding: 0;
   }
 }
+
+.moire-panel {
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.moire-samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.moire-samples figure {
+  margin: 0;
+  text-align: center;
+}
+
+.moire-samples figcaption {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.moire-note {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
