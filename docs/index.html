@@ -149,6 +149,37 @@ img, name = gen()</code></pre>
       </div>
     </section>
 
+    <section id="families" class="section alt">
+      <h2>Pattern Families at a Glance</h2>
+      <p>Every run can emit both in-distribution (natural) and out-of-distribution (neon) variants. Each figure below comes straight from the generator.</p>
+      <div class="pattern-samples">
+        <figure>
+          <img src="assets/palette_0.png?v=20250922" alt="Checker in-distribution sample">
+          <figcaption><strong>Checker · in-distribution</strong></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ood_0.png?v=20250922" alt="Checker OOD sample">
+          <figcaption><strong>Checker · OOD</strong></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/palette_1.png?v=20250922" alt="Stripes in-distribution sample">
+          <figcaption><strong>Stripes · in-distribution</strong></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ood_1.png?v=20250922" alt="Stripes OOD sample">
+          <figcaption><strong>Stripes · OOD</strong></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/palette_2.png?v=20250922" alt="Dots in-distribution sample">
+          <figcaption><strong>Dots · in-distribution</strong></figcaption>
+        </figure>
+        <figure>
+          <img src="assets/ood_2.png?v=20250922" alt="Dots OOD sample">
+          <figcaption><strong>Dots · OOD</strong></figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section id="moire" class="section alt">
       <h2>ViT-Focused Moirés</h2>
       <p>HoneyPotter’s moiré family generates interference bands from dual-frequency sine waves. Intensities can be snapped to an <code>N×N</code> grid (default <code>16×16</code>) so each vision transformer patch sees a coherent signal.</p>
@@ -161,26 +192,23 @@ img, name = gen()</code></pre>
           </ul>
           <p class="moire-note">Outputs are named after their parameters so you can trace frequency, angle, grid size, and hue in downstream analysis.</p>
         </div>
-        <div class="moire-gallery">
-          <img class="moire-panel" src="assets/moire_panel.png?v=20250922" alt="Palette vs OOD moiré grid">
-          <div class="moire-samples">
-            <figure>
-              <img src="assets/moire_focus_00.png?v=20250922" alt="Grid 16 hue 20 angle 8 moiré">
-              <figcaption>Grid 16 · hue 20° · θ 8°</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/moire_focus_01.png?v=20250922" alt="Grid 16 hue 150 angle 45 moiré">
-              <figcaption>Grid 16 · hue 150° · θ 45°</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/moire_focus_02.png?v=20250922" alt="Grid 8 hue 280 angle 90 moiré">
-              <figcaption>Grid 8 · hue 280° · θ 90°</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/moire_focus_03.png?v=20250922" alt="Freeform hue 45 angle 135 moiré">
-              <figcaption>Freeform · hue 45° · θ 135°</figcaption>
-            </figure>
-          </div>
+        <div class="moire-samples">
+          <figure>
+            <img src="assets/moire_focus_00.png?v=20250922" alt="Grid 16 hue 20 angle 8 moiré">
+            <figcaption><strong>Grid 16 · hue 20° · θ 8°</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/moire_focus_01.png?v=20250922" alt="Grid 16 hue 150 angle 45 moiré">
+            <figcaption><strong>Grid 16 · hue 150° · θ 45°</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/moire_focus_02.png?v=20250922" alt="Grid 8 hue 280 angle 90 moiré">
+            <figcaption><strong>Grid 8 · hue 280° · θ 90°</strong></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/moire_focus_03.png?v=20250922" alt="Freeform hue 45 angle 135 moiré">
+            <figcaption><strong>Freeform · hue 45° · θ 135°</strong></figcaption>
+          </figure>
         </div>
       </div>
     </section>
