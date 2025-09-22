@@ -105,9 +105,11 @@ img, name = gen()  # PIL.Image.Image, e.g. "checker_sz16_ood"
 img.save(f"{name}.png")
 ```
 
-For ViT-aligned moirés:
+For ViT-focused moirés:
 
 ```python
+from honeypotter import GenerateDistractor, CategorySpec
+
 spec = CategorySpec.default(
     families=["moire"],
     n_categories=10,
@@ -115,6 +117,9 @@ spec = CategorySpec.default(
     moire_random_hue=False,
     moire_hue_list=[15.0, 195.0, 305.0],
 )
+
+gen = GenerateDistractor(spec=spec, seed=7)
+img, name = gen()
 ```
 
 ## Evaluation Guidance
