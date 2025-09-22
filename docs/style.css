@@ -216,9 +216,11 @@ code {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  align-items: center;
 }
 
-.moire-gallery img {
+.moire-gallery img,
+.moire-samples img {
   width: 100%;
   border-radius: 14px;
   border: 1px solid rgba(15, 23, 42, 0.1);
@@ -289,8 +291,9 @@ footer {
 
 .moire-samples {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
+  width: 100%;
 }
 
 .moire-samples figure {
@@ -316,4 +319,3 @@ footer {
     width: 100%;
   }
 }
-
