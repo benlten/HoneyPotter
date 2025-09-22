@@ -6,7 +6,7 @@
 
 # HoneyPotter
 
-**Synthetic distractor factory for robustness experiments.** Honeypotter crafts non-semantic pattern families—checkers, stripes, blobs, textures, and ViT-focused moirés—that lure vision models into confident mistakes. Use it to benchmark steal-rate, calibration, and OOD behaviour without collecting new data.
+**Synthetic distractor factory for robustness experiments.** Honeypotter crafts non-semantic pattern families—checkers, stripes, blobs, textures, and ViT-focused moirés—that lure vision models into confident mistakes. Use it to benchmark misclassification rate on distractors, calibration, and out-of-distribution (OOD) behaviour without collecting new data.
 
 <p align="center">
   <a href="https://benlten.github.io/HoneyPotter">Website</a> ·
@@ -125,8 +125,8 @@ img, name = gen()
 ## Evaluation Guidance
 
 1. **Extend the label space**: append honeypot class names to your dataset (e.g., ImageNet-1k → 1000 + K honeypots).
-2. **Train clean, evaluate mixed**: honeypots stay out of the training split; blend them into validation/test to measure steal-rate.
-3. **Report**: clean accuracy, honeypot steal-rate, calibration/ECE on both clean and distractor sets.
+2. **Train clean, evaluate mixed**: honeypots stay out of the training split; blend them into validation/test to measure misclassification rate on distractors.
+3. **Report**: clean accuracy, honeypot misclassification rate on distractors, calibration/ECE on both clean and distractor sets.
 
 ## Project Structure
 
