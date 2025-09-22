@@ -23,6 +23,9 @@
   <img src="docs/assets/ood_1.png" width="240" alt="Stripes OOD sample">
   <img src="docs/assets/palette_2.png" width="240" alt="Dots palette sample">
   <img src="docs/assets/ood_2.png" width="240" alt="Dots OOD sample">
+  <br/>
+  <img src="docs/assets/moire_grid16.png" width="180" alt="Moire grid 16x16">
+  <img src="docs/assets/moire_freeform.png" width="180" alt="Moire freeform">
 </p>
 
 ## Installation
