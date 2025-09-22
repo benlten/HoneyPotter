@@ -75,6 +75,33 @@
       </div>
     </section>
 
+    <section id="outputs" class="section">
+      <h2>What does HoneyPotter export?</h2>
+      <div class="outputs-grid">
+        <div class="card">
+          <h3>Image directories</h3>
+          <p>Each category (e.g., <code>moire_f7_df8_a163_grid16_h15</code>) is a folder filled with numbered PNGs ready to drop into validation sets.</p>
+        </div>
+        <div class="card">
+          <h3>Label metadata</h3>
+          <p><code>labelmap.json</code>, <code>labels.txt</code>, and <code>metadata.csv</code> bind names to IDs and preserve parameters for every sample.</p>
+        </div>
+        <div class="card">
+          <h3>Patterns-only mode</h3>
+          <p>Need backgrounds instead of labels? Use <code>--patterns_only</code> to dump a flat bank of tiles like <code>pattern_000042.png</code>.</p>
+        </div>
+      </div>
+      <div class="workflow">
+        <h3>Typical workflow</h3>
+        <ol>
+          <li>Generate distractors alongside your validation set.</li>
+          <li>Append the class IDs to your task (ImageNet → 1000 + K).</li>
+          <li>Evaluate misclassification rate on distractors vs. clean accuracy.</li>
+          <li>Drill down by family angles, hues, and grid settings to diagnose biases.</li>
+        </ol>
+      </div>
+    </section>
+
     <section id="install" class="section alt">
       <h2>Install</h2>
       <div class="install-grid">
