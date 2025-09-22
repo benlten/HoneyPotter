@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://honeypotter.benjamintenwolde.com/">
+    <img src="images/HoneyPotter_logo.png" alt="HoneyPotter logo" width="260">
+  </a>
+</p>
+
 # HoneyPotter
 
 **Synthetic distractor factory for robustness experiments.** Honeypotter crafts non-semantic pattern families—checkers, stripes, blobs, textures, and ViT-friendly moirés—that lure vision models into confident mistakes. Use it to benchmark steal-rate, calibration, and OOD behaviour without collecting new data.
