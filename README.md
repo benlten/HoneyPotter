@@ -22,23 +22,23 @@
 - **Seeded generation**: deterministic configs with reproducible blur, frequency, and hue parameters baked into category names
 
 <p align="center">
-  <img src="docs/assets/palette_0.png" width="140" alt="Checker palette sample">
-  <img src="docs/assets/ood_0.png" width="140" alt="Checker OOD sample">
-  <img src="docs/assets/palette_1.png" width="140" alt="Stripes palette sample">
+  <img src="docs/assets/palette_0.png?v=20250922" width="140" alt="Checker palette sample">
+  <img src="docs/assets/ood_0.png?v=20250922" width="140" alt="Checker OOD sample">
+  <img src="docs/assets/palette_1.png?v=20250922" width="140" alt="Stripes palette sample">
   <br/>
-  <img src="docs/assets/ood_1.png" width="140" alt="Stripes OOD sample">
-  <img src="docs/assets/palette_2.png" width="140" alt="Dots palette sample">
-  <img src="docs/assets/ood_2.png" width="140" alt="Dots OOD sample">
+  <img src="docs/assets/ood_1.png?v=20250922" width="140" alt="Stripes OOD sample">
+  <img src="docs/assets/palette_2.png?v=20250922" width="140" alt="Dots palette sample">
+  <img src="docs/assets/ood_2.png?v=20250922" width="140" alt="Dots OOD sample">
   <br/>
-  <img src="docs/assets/moire_grid16.png" width="140" alt="Moire grid 16x16 aligned">
-  <img src="docs/assets/moire_freeform.png" width="140" alt="Moire freeform">
-  <img src="docs/assets/sample_moire.png" width="140" alt="Moire random sample">
+  <img src="docs/assets/moire_grid16.png?v=20250922" width="140" alt="Moire grid 16x16 aligned">
+  <img src="docs/assets/moire_freeform.png?v=20250922" width="140" alt="Moire freeform">
+  <img src="docs/assets/sample_moire.png?v=20250922" width="140" alt="Moire random sample">
   <br/>
-  <img src="docs/assets/sample_00.png" width="120" alt="Sample pattern 0">
-  <img src="docs/assets/sample_01.png" width="120" alt="Sample pattern 1">
-  <img src="docs/assets/sample_02.png" width="120" alt="Sample pattern 2">
-  <img src="docs/assets/sample_03.png" width="120" alt="Sample pattern 3">
-  <img src="docs/assets/sample_04.png" width="120" alt="Sample pattern 4">
+  <img src="docs/assets/sample_00.png?v=20250922" width="120" alt="Sample pattern 0">
+  <img src="docs/assets/sample_01.png?v=20250922" width="120" alt="Sample pattern 1">
+  <img src="docs/assets/sample_02.png?v=20250922" width="120" alt="Sample pattern 2">
+  <img src="docs/assets/sample_03.png?v=20250922" width="120" alt="Sample pattern 3">
+  <img src="docs/assets/sample_04.png?v=20250922" width="120" alt="Sample pattern 4">
 </p>
 
 ## Installation
