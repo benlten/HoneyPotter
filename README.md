@@ -15,6 +15,16 @@
 - **Patterns-only export**: add `--patterns_only` to dump flat texture banks without label metadata
 - **Seeded generation**: deterministic configs with reproducible blur, frequency, and hue parameters baked into category names
 
+<p align="center">
+  <img src="docs/assets/palette_0.png" width="240" alt="Checker palette sample">
+  <img src="docs/assets/ood_0.png" width="240" alt="Checker OOD sample">
+  <img src="docs/assets/palette_1.png" width="240" alt="Stripes palette sample">
+  <br/>
+  <img src="docs/assets/ood_1.png" width="240" alt="Stripes OOD sample">
+  <img src="docs/assets/palette_2.png" width="240" alt="Dots palette sample">
+  <img src="docs/assets/ood_2.png" width="240" alt="Dots OOD sample">
+</p>
+
 ## Installation
 
 ```bash
