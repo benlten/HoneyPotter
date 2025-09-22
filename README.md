@@ -6,7 +6,7 @@
 
 # HoneyPotter
 
-**Synthetic distractor factory for robustness experiments.** Honeypotter crafts non-semantic pattern families—checkers, stripes, blobs, textures, and ViT-friendly moirés—that lure vision models into confident mistakes. Use it to benchmark steal-rate, calibration, and OOD behaviour without collecting new data.
+**Synthetic distractor factory for robustness experiments.** Honeypotter crafts non-semantic pattern families—checkers, stripes, blobs, textures, and ViT-focused moirés—that lure vision models into confident mistakes. Use it to benchmark steal-rate, calibration, and OOD behaviour without collecting new data.
 
 <p align="center">
   <a href="https://benlten.github.io/HoneyPotter">Website</a> ·
@@ -16,7 +16,7 @@
 
 ## Highlights
 - **Pattern families**: `checker`, `stripes`, `dots`, `blob`, `solid`, optional `circle`, `perlin`, `texture`, and `moire`
-- **ViT-aligned moirés**: interference bands quantised to configurable `N×N` grids (default `16×16`) for patch-consistent signals
+- **ViT-focused moirés**: interference bands quantised to configurable `N×N` grids (default `16×16`) for patch-consistent signals
 - **Color controls**: grayscale, high-contrast BW, neon OOD palettes, or gamut-constrained RGB via histogram/GMM checks
 - **Patterns-only export**: add `--patterns_only` to dump flat texture banks without label metadata
 - **Seeded generation**: deterministic configs with reproducible blur, frequency, and hue parameters baked into category names
